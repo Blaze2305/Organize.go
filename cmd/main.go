@@ -1,6 +1,8 @@
 package main
 
 import (
+	"bufio"
+	"fmt"
 	"log"
 	"os"
 
@@ -8,13 +10,14 @@ import (
 )
 
 func main() {
-
-	_, err := os.Getwd()
-	if err != nil {
-		log.Fatalln(err)
+	fmt.Println("Organize this folder? Action is irreversible y / n")
+	reader := bufio.NewReader(os.Stdin)
+	input, _ := reader.ReadString('\n')
+	if string(input[0]) != "y" {
+		fmt.Println("Good Bye :D")
+		return
 	}
-
-	err = utils.MakeInitFolders()
+	err := utils.MakeInitFolders()
 	if err != nil {
 		log.Fatalln(err)
 		return
@@ -25,5 +28,6 @@ func main() {
 		log.Fatalln(err)
 		return
 	}
+	fmt.Println("Done")
 
 }

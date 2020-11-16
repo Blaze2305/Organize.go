@@ -14,5 +14,5 @@ This is a small file organization tool I made ( remade tbh ) in golang. It takes
         $ make -e OS=windows build
         ```
     Build outputs to a folder named bin/organize with the executable.
-    I reccomend that you put the executable somewhere in your path , so that then you can call it anywhere you want through the command line. Heck maybe even set up a conjob to organize folders every day or so.
+    I recommend that you put the executable somewhere in your path , so that then you can call it anywhere you want through the command line. Heck maybe even set up a conjob to organize folders every day or so.
     

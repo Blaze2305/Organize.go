@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -12,12 +11,18 @@ func main() {
 
 	_, err := os.Getwd()
 	if err != nil {
-		fmt.Println(err)
+		log.Fatalln(err)
 	}
 
 	err = utils.MakeInitFolders()
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
+		return
+	}
+
+	err = utils.OrganizeFolder()
+	if err != nil {
+		log.Fatalln(err)
 		return
 	}
 
